@@ -1,5 +1,6 @@
 import random
 import re
+from csv import reader 
 
 class Word:
 
@@ -9,9 +10,15 @@ class Word:
             self (Word): an instance of Word.
         """
         self.letter_guessed = ["_"]
-        self.words = ["dictionary"]
+        self.words = self.wordsrandom()
         self.chosen_word = self.random_word()        
         self.blank_word = ["_"] * len(self.chosen_word)
+    
+    def wordsrandom(self):
+        with open("randomwords.csv", mode="r") as file:
+            reader_file = reader(file)
+            list_of_words = list(reader_file)
+            return list_of_words
 
     def secret_word(self):
         for i in re.finditer(self.letter_guessed[-1], self.chosen_word):
