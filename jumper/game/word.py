@@ -1,5 +1,6 @@
 import random
 import re
+import os
 from csv import reader 
 
 class Word:
@@ -11,11 +12,13 @@ class Word:
         """
         self.letter_guessed = ["_"]
         self.words = self.wordsrandom()
-        self.chosen_word = self.random_word()        
+        self.chosen_word = self.random_word() 
+        print(self.chosen_word)       
         self.blank_word = ["_"] * len(self.chosen_word)
     
     def wordsrandom(self):
-        with open("randomwords.csv", mode="r") as file:
+        path = os.path.dirname(os.path.realpath(__file__))
+        with open(f"{path}\\randomwords.csv", mode="r") as file:
             reader_file = reader(file)
             list_of_words = list(reader_file)
             return list_of_words
@@ -45,4 +48,5 @@ class Word:
     
     def random_word(self):
         self.chosen_word = random.choice(self.words)
+        print(self.chosen_word)
         return self.chosen_word
