@@ -48,6 +48,10 @@ class Director:
         print(self.parachute.parachuter())
         
         self.keep_playing = not self.parachute.end() or self.word.see_blank()
+        
+        if self.keep_playing is False:
+            print(" Game Over")
+            
 
     def get_inputs(self):
         """ Gets the inputs at the beginning of each round of play. In this case, it gets the letters added by the user and verifies that they
