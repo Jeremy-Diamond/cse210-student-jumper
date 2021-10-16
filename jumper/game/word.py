@@ -24,8 +24,7 @@ class Word:
         """
         self.letter_guessed = ["_"]
         self.words = self.wordsrandom()
-        self.chosen_word = self.random_word() 
-        print(self.chosen_word)       
+        self.chosen_word = self.random_word()       
         self.blank_word = ["_"] * len(self.chosen_word)
     
     def wordsrandom(self):
@@ -98,6 +97,5 @@ class Word:
         Returns:
            String: A word is chosen at random
         """
-        self.chosen_word = random.choice(self.words)
-        print(self.chosen_word)
+        self.chosen_word = random.choice(self.words[0])
         return self.chosen_word
