@@ -44,13 +44,20 @@ class Director:
 
         Args: self(Director): An instance of Director.
         """
-        print(self.word.secret_word())
+        print(self.word.secret_word())  
+        print()
         print(self.parachute.parachuter())
         
-        self.keep_playing = not self.parachute.end() or self.word.see_blank()
+        
+        self.keep_playing = not self.parachute.end() or self.word.see_blank() or self.word.win_game()
         
         if self.keep_playing is False:
-            print(" Game Over")
+            if "_" not in self.word.blank_word:
+                print("Congratulations, you have won!")
+
+            else: 
+                print("Sorry your parachuter has fallen and you have lost the game.")
+            exit
             
 
     def get_inputs(self):

@@ -40,6 +40,7 @@ class Parachute:
             return skip
         
         end = "   X\n" + "\n".join(self.parachute_graphics[self.num_wrong_guess + 1:])
+
         return end
     
     def end(self):
