@@ -24,7 +24,11 @@ class Word:
         """
         self.letter_guessed = ["_"]
         self.words = self.wordsrandom()
+<<<<<<< Updated upstream
         self.chosen_word = self.random_word()       
+=======
+        self.chosen_word = self.random_word()        
+>>>>>>> Stashed changes
         self.blank_word = ["_"] * len(self.chosen_word)
         self.correct_count = 0
         self.chosen_letter_count = len(self.chosen_word)
@@ -108,5 +112,10 @@ class Word:
         Returns:
            String: A word is chosen at random
         """
+<<<<<<< Updated upstream
         self.chosen_word = random.choice(self.words[0])
+=======
+        self.chosen_word = random.choice(self.words)
+        print(self.chosen_word)
+>>>>>>> Stashed changes
         return self.chosen_word
